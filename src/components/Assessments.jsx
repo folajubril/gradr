@@ -8,9 +8,9 @@ const Assessments = () => {
 
   return (
     <div className="w-100 p-4 flex flex-col justify-between gap-2 border-l-stone-950">
-      <h1 className="text-xl">Assessments</h1>
+      <h1 className="text-3xl">{!showModal ? "Assessments" : "Grade"}</h1>
 
-      <div className="w-100 flex justify-center items-center">
+      <div className="w-100">
         {!showModal ? (
           <div className="flex flex-col gap-6 justify-between items-start">
             <input
