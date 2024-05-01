@@ -1,0 +1,21 @@
+import React from "react";
+import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
+import { Outlet } from "react-router-dom";
+
+const Home = () => {
+  return (
+    <div className="w-screen flex">
+      <div className="w-2/12">
+        <Sidebar />
+      </div>
+
+      <div className="w-10/12 flex flex-col">
+        <Header />
+        <Outlet />
+      </div>
+    </div>
+  );
+};
+
+export default Home;
