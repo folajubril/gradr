@@ -4,7 +4,6 @@ import MUITable from "./MUITable";
 
 const Assessments = () => {
   const [showModal, setShowModal] = useState(false);
-  console.log("showModal: ", showModal);
 
   return (
     <div className="w-100 p-4 flex flex-col justify-between gap-2 border-l-stone-950">
