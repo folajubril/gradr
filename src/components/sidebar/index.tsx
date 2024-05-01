@@ -14,11 +14,11 @@ export default function Sidebar() {
         <div
           onClick={() => {
             setActive(1);
-            router.push("/assessment");
+            router.push("/assessments");
           }}
           className="flex gap-[8px] cursor-pointer hover:bg-[#f9f9f9] p-2"
         >
-          <AssessmentLogo />
+          <AssessmentLogo active={ active === 1 ? true : false}/>
           <p className={active === 1 ? "text-[#000000]" : "text-[gray] font-Matter font-semibold"}>Assesments</p>
         </div>
         <div
@@ -28,7 +28,7 @@ export default function Sidebar() {
           }}
           className="flex gap-[8px] cursor-pointer hover:bg-[#f9f9f9] p-2 "
         >
-          <GraderIcon />
+          <GraderIcon active={ active === 2 ? true : false}/>
           <p className={active === 2 ? "text-[#000000]" : "text-[gray] font-Matter font-semibold"}>Grader</p>
         </div>
         <div
@@ -38,7 +38,7 @@ export default function Sidebar() {
           }}
           className="flex gap-[8px] cursor-pointer hover:bg-[#f9f9f9] p-2"
         >
-          <PermissionIcon />
+          <PermissionIcon active={ active === 3 ? true : false}/>
           <p className={active === 3 ? "text-[#000000]" : "text-[gray] font-Matter font-semibold"}>Submissions</p>
         </div>
       </div>
