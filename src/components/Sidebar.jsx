@@ -1,15 +1,20 @@
 import React from "react";
 import { logo } from "../assets";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const nav = useNavigate();
+
   return (
     <div className="w-100 h-dvh fixed p-6 bg-slate-100 flex flex-col justify-between shadow-zinc-800">
       <img src={logo} alt="logo" />
 
-      <div className="flex flex-col gap-4">
+      <div className="h-[40%] text-zinc-500 flex flex-col justify-between gap-4">
         <div className="flex justify-between items-center">
           {/* icon */}
-          <p className="cursor-pointer">Assessments</p>
+          <p className="cursor-pointer" onClick={() => nav("/assessments")}>
+            Assessments
+          </p>
         </div>
         <div className="flex justify-between items-center">
           {/* icon */}

@@ -2,24 +2,25 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Dropdown, Form } from "semantic-ui-react";
 import { result } from "../results";
+import { useGrade } from "../requests/useGrade";
 
 const MUIForm = () => {
   const nav = useNavigate();
   const [form, setForm] = useState({});
   const [loading, setLoading] = useState(false);
-  //   const { isLoading, error, data, mutate } = useGrade();
+  const { isLoading, error, data, mutate } = useGrade();
 
   const handleChange = (e, { name, value }) => {
     setForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
 
   const handleGrade = () => {
-    console.log("result: ", result);
+    // mutate(form)
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
       nav("/results");
-    }, 10000);
+    }, 3000);
   };
 
   const options = [
@@ -43,7 +44,7 @@ const MUIForm = () => {
   if (loading) {
     return (
       <div className="w-100 h-100 flex justify-center items-center">
-        <p>Loading....</p>
+        <p className="font-xl text-gray-600">Loading....</p>
       </div>
     );
   }
